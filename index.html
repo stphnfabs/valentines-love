@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Mom & Dad ❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* Body & Background */
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Poppins', Arial, sans-serif;
+        background: linear-gradient(-45deg, #ff4e50, #fc913a, #ff6f91, #ff9671);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    /* Text */
+    h1 {
+        font-size: 2.2em;
+        line-height: 1.2;
+        animation: fadeIn 3s ease-in-out;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 10px;
+        animation: fadeIn 5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Hearts */
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        transform: rotate(45deg);
+        animation: float 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+        0% { bottom: -10px; opacity: 1; }
+        100% { bottom: 100vh; opacity: 0; }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+        h1 { font-size: 1.8em; }
+        p { font-size: 1em; }
+        .heart {
+            width: 12px;
+            height: 12px;
+        }
+        .heart::before,
+        .heart::after {
+            width: 12px;
+            height: 12px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>💖 Happy Valentine’s Mom & Dad 💖</h1>
+<p>I love you so much! Thank you for everything. ❤️</p>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => { heart.remove(); }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
