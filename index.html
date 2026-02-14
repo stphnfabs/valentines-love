@@ -53,6 +53,15 @@
         to {opacity: 1; transform: translateY(0);}
     }
 
+    /* Family photo */
+    .family-photo {
+        width: 80%;             
+        max-width: 400px;       
+        border-radius: 15px;    
+        margin: 15px 0;         
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
     /* Hearts */
     .heart {
         position: absolute;
@@ -85,6 +94,7 @@
     @media (max-width: 480px) {
         h1 { font-size: 1.8em; }
         p { font-size: 1em; }
+        .family-photo { width: 95%; max-width: 300px; }
         .heart {
             width: 12px;
             height: 12px;
@@ -101,6 +111,9 @@
 <body>
 
 <h1>💖 Happy Valentine’s Mom & Dad 💖</h1>
+
+<img src="family.jpg" alt="My Family" class="family-photo">
+
 <p>I love you so much! Thank you for everything. ❤️</p>
 
 <script>
@@ -119,3 +132,4 @@
 
 </body>
 </html>
+
